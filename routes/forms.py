@@ -27,16 +27,6 @@ class AirportRouteForm(forms.ModelForm):
         return cleaned_data
 
 
-# class NthNodeSearchForm(forms.Form):
-#     """
-#     Search Nth Left / Right Node
-#     """
-#     airport_code = forms.CharField(label="Airport Code", max_length=10)
-#     direction = forms.ChoiceField(
-#         choices=(('left', 'Left'), ('right', 'Right'))
-#     )
-#     n = forms.IntegerField(min_value=1)
-
 class NthNodeSearchForm(forms.Form):
     airport_code = forms.CharField(max_length=10)
     direction = forms.ChoiceField(
@@ -53,14 +43,6 @@ class NthNodeSearchForm(forms.Form):
             )
 
         return code
-
-# class ShortestPathForm(forms.Form):
-#     """
-#     Shortest path between two airports
-#     """
-#     source = forms.CharField(max_length=10)
-#     destination = forms.CharField(max_length=10)
-
 
 class ShortestPathForm(forms.Form):
     source = forms.CharField(max_length=10)
@@ -88,14 +70,6 @@ class ShortestPathForm(forms.Form):
 
         return cleaned_data
 
-
-# class AirportForm(forms.ModelForm):
-#     """
-#     Form to create Airport
-#     """
-#     class Meta:
-#         model = Airport
-#         fields = ['code']
 
 class AirportForm(forms.ModelForm):
     class Meta:

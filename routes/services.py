@@ -1,4 +1,5 @@
 from .models import Airport, AirportRoute
+from .models import AirportRoute
 
 
 def find_nth_node(airport_code, direction, n):
@@ -32,7 +33,7 @@ def get_longest_route():
 
 def find_shortest_path(start_airport, end_airport, visited=None):
     """
-    DFS-based shortest path (acceptable for machine test)
+    DFS-based shortest path
     """
     if visited is None:
         visited = set()
@@ -57,7 +58,6 @@ def find_shortest_path(start_airport, end_airport, visited=None):
 
     return shortest_distance
 
-from .models import AirportRoute
 
 
 def build_route_tree():

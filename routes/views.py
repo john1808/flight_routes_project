@@ -1,6 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render
 from .forms import AirportRouteForm, NthNodeSearchForm, ShortestPathForm, AirportForm
 from .models import Airport
@@ -11,14 +9,6 @@ from .services import (
     build_route_tree,
     
 )
-
-# def add_airport_route(request):
-#     form = AirportRouteForm(request.POST or None)
-
-#     if form.is_valid():
-#         form.save()
-
-#     return render(request, 'add_route.html', {'form': form})
 
 def add_airport_route(request):
     form = AirportRouteForm(request.POST or None)
@@ -75,7 +65,7 @@ def add_airport(request):
 
     if form.is_valid():
         form.save()
-        form = AirportForm()  # reset form after save
+        form = AirportForm()  
 
     return render(request, 'add_airport.html', {
         'form': form
