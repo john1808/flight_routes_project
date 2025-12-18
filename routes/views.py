@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .forms import AirportRouteForm, NthNodeSearchForm, ShortestPathForm, AirportForm
 from .models import Airport
-from .services import (
+from .functions import (
     find_nth_node,
     get_longest_route,
     find_shortest_path,
