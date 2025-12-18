@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Shortest Route Between Two Airports</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Find Shortest Route</button>
+</form>
+
+{% if distance is not none %}
+    <h3>Shortest Duration:</h3>
+    <p><strong>{{ distance }}</strong></p>
+{% endif %}
+
+{% endblock %}

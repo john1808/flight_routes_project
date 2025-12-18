@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Airport</h2>
+
+{% if form.errors %}
+    <div style="color: red;">
+        {{ form.errors }}
+    </div>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Airport</button>
+</form>
+
+{% endblock %}

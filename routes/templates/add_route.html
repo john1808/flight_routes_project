@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Airport Route</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Route</button>
+</form>
+
+<hr>
+
+<h3>Airport Route Tree</h3>
+
+{% if tree %}
+    <ul>
+        {% for parent, children in tree.items %}
+            <li>
+                <strong>{{ parent }}</strong>
+                <ul>
+                    {% for node in children %}
+                        <li>
+                            {{ node.position|title }} →
+                            {{ node.child }}
+                            ({{ node.duration }})
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No routes added yet.</p>
+{% endif %}
+
+{% endblock %}
